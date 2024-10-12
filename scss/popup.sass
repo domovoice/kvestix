@@ -1,0 +1,93 @@
+.popup-menu-wrap 
+  position: relative
+
+  .popup-menu 
+    min-width: 150px
+    min-height: 50px
+    display: none
+    padding: 40px 60px 20px
+    top: 0
+    left: 0
+    right: 0
+    background: $white
+    position: fixed
+    max-width: 98%
+    max-height: 98%
+    overflow-y: auto
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2)
+    margin: auto
+    line-height: normal
+    z-index: 1031
+
+    @include media-breakpoint-up(md) 
+      padding: 20px 55px 10px 30px
+      position: absolute
+      left: auto
+      right: auto
+      max-width: none
+      max-height: none
+      margin: 0 0 0 -5px
+      &-right 
+        right: 0
+      
+    
+
+    ul.menu-list 
+      max-height: 400px
+      overflow-y: auto
+
+      li 
+        white-space: nowrap
+
+    .gray-label 
+      margin-bottom: 10px
+
+  .popup-menu-close 
+    position: absolute
+    top: 7px
+    right: 10px
+    cursor: pointer
+    z-index: 1
+  
+
+  .popup-menu-show 
+    cursor: pointer
+  
+
+
+$menuIndentY: .5rem
+$menuIndentX: 1.875rem
+
+ul.menu-list 
+  & 
+    font-weight: 600
+    font-size: 14px
+    padding: 0
+    margin: 0 $menuIndentX * -1
+
+    li 
+      list-style: none
+      line-height: 1.5
+      margin: 0
+      position: relative
+
+      a 
+        display: block
+        padding: $menuIndentY $menuIndentX
+        text-decoration: none
+        color: $body-color
+
+        &:hover 
+          color: $link-hover-color
+
+  & li.active 
+    font-weight: 800
+    padding: $menuIndentY $menuIndentX
+
+    a 
+      margin: $menuIndentY * -1 $menuIndentX * -1
+    
+
+    .pink-icon 
+      position: absolute
+      left: 0
